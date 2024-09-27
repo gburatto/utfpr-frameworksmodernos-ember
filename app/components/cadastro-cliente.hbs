@@ -1,0 +1,30 @@
+<h3>Cadastro de Clientes</h3>
+
+{{#if this.sucesso}}
+<div class="alert alert-success" role="alert">
+    Cadastro realizado com sucesso.
+</div>
+{{/if}}
+{{#if this.erro}}
+<div class="alert alert-danger" role="alert">
+    Erro ao realizar o cadastro.
+</div>
+{{/if}}
+
+<form>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <Input @value={{this.nome}} @type="text" class="form-control" id="nome" />
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <Input @value={{this.email}} @type="text" class="form-control" id="email" />
+    </div>
+    <button type="button" {{on "click" this.salvar}} class="btn btn-primary"
+        disabled={{this.desabilitar}}>Salvar</button>
+    {{#if this.isLoading}}
+    <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+    </div>
+    {{/if}}
+</form>

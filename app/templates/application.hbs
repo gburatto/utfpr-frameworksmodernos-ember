@@ -1,0 +1,33 @@
+{{page-title "Minha Primeira App Ember"}}
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Meu Sistema</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <LinkTo @route="cadastro-cliente" class="nav-link active">Cadastro Cliente</LinkTo>
+                    </li>
+                    <li class="nav-item">
+                        <LinkTo @route="lista-cliente" class="nav-link active">Lista Cliente</LinkTo>
+                    </li>
+                    <li class="nav-item">
+                        <LinkTo @route="cadastro-produto" class="nav-link active">Cadastro Produto</LinkTo>
+                    </li>
+                    <li class="nav-item">
+                        <LinkTo @route="lista-produto" class="nav-link active">Lista Produto</LinkTo>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {{outlet}}
+
+</div>

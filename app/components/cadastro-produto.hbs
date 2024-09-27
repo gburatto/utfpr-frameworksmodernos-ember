@@ -1,0 +1,37 @@
+<h3>Cadastro de Produtos</h3>
+
+{{#if this.sucesso}}
+<div class="alert alert-success" role="alert">
+    Cadastro realizado com sucesso.
+</div>
+{{/if}}
+{{#if this.erro}}
+<div class="alert alert-danger" role="alert">
+    Erro ao realizar o cadastro.
+</div>
+{{/if}}
+
+<form>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome do produto</label>
+        <Input @value={{this.nome}} @type="text" class="form-control" id="nome" />
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição do produto</label>
+        <Input @value={{this.descricao}} @type="text" class="form-control" id="descricao" />
+    </div>
+    <div class="mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <div class="input-group">
+          <span class="input-group-text">R$</span>
+          <Input @value={{this.preco}} @type="number" min="0" step="0.01" class="form-control" id="preco" />
+        </div>
+    </div>
+    <button type="button" {{on "click" this.salvar}} class="btn btn-primary"
+        disabled={{this.desabilitar}}>Salvar</button>
+    {{#if this.isLoading}}
+    <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+    </div>
+    {{/if}}
+</form>

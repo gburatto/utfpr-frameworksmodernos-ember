@@ -1,0 +1,24 @@
+<h3>Lista de Clientes</h3>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.clientes as |cliente|}}
+    <tr>
+      <th scope="row">{{cliente.id}}</th>
+      <td>{{cliente.nome}}</td>
+      <td>{{cliente.email}}</td>
+      <td><button {{on "click" (fn this.editar cliente.id)}} type="button" class="btn btn-secondary">Editar</button></td>
+      <td><button {{on "click" (fn this.excluir cliente.id)}} type="button" class="btn btn-danger">Excluir</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
